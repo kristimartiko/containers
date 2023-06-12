@@ -80,6 +80,7 @@
 	<modules>
 		<module>gateway</module>
 		<module>container-service</module>
+		<module>order-service</module>
 	</modules>
 
 	<packaging>pom</packaging>
