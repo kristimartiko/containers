@@ -19,7 +19,7 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        List<ParcelEntity> parcels = Stream.of(
+      /*  List<ParcelEntity> parcels = Stream.of(
                 new ParcelEntity(1L, "Parcel1", new BigDecimal(50), new BigDecimal(12),
                         new BigDecimal(34), new BigDecimal(35), new BigDecimal(80)),
                 new ParcelEntity(2L, "Parcel2", new BigDecimal(50), new BigDecimal(12),
@@ -27,6 +27,6 @@ public class DataInitializer implements CommandLineRunner {
                 new ParcelEntity(3L, "Parcel3", new BigDecimal(50), new BigDecimal(12),
                         new BigDecimal(34), new BigDecimal(35), new BigDecimal(80)),
                 new ParcelEntity(4L, "Parcel4", new BigDecimal(50), new BigDecimal(12),
-                        new BigDecimal(34), new BigDecimal(35), new BigDecimal(80))).map(parcelRepository::save).toList();
+                        new BigDecimal(34), new BigDecimal(35), new BigDecimal(80))).map(parcelRepository::save).toList(); */
     }
 }
