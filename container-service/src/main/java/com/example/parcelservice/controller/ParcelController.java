@@ -1,9 +1,8 @@
 package com.example.parcelservice.controller;
 
-import com.example.parcelservice.entity.ParcelEntity;
-import com.example.parcelservice.repository.ParcelRepository;
+import com.example.parcelservice.entity.ContainerEntity;
+import com.example.parcelservice.repository.ContainerRepository;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,16 +12,14 @@ import java.util.List;
 @RequestMapping("/api")
 public class ParcelController {
 
-    private static final String X_PREMIUM_CUSTOMER_HEADER = "X-Premium-Customer";
+    private ContainerRepository parcelRepository;
 
-    private ParcelRepository parcelRepository;
-
-    public ParcelController(ParcelRepository parcelRepository) {
+    public ParcelController(ContainerRepository parcelRepository) {
         this.parcelRepository = parcelRepository;
     }
 
     @GetMapping("/parcels")
-    public List<ParcelEntity> allProducts() {
+    public List<ContainerEntity> allProducts() {
         return this.parcelRepository.findAll();
     }
 }

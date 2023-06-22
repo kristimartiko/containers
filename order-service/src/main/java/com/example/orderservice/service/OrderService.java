@@ -1,7 +1,6 @@
 package com.example.orderservice.service;
 
-import com.example.entities.entity.ContainerEntity;
-import com.example.entities.entity.OrderEntity;
+import com.example.orderservice.entity.OrderEntity;
 import com.example.orderservice.OrderDto;
 import com.example.orderservice.repositories.OrderRepository;
 import lombok.Data;
