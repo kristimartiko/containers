@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 public class OrderController {
 
-   /* final OrderRepository orderRepository;
+    final OrderRepository orderRepository;
     final OrderService orderService;
     @GetMapping("orders")
     public List<OrderEntity> allOrders() {
@@ -24,5 +24,5 @@ public class OrderController {
     @PostMapping("addOrder/{id}")
     public void addOrder(@RequestBody OrderDto orderDto, @PathVariable Long id) {
         this.orderService.addOrder(orderDto, id);
-    }*/
+    }
 }

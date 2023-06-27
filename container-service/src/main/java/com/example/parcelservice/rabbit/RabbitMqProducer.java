@@ -16,12 +16,6 @@ public class RabbitMqProducer implements CommandLineRunner {
     final RabbitTemplate rabbitTemplate;
     final ContainerService parcelService;
 
-    /*@GetMapping("/containers")
-    public String getMessage() {
-
-        return "Message Published";
-    }*/
-
     @Override
     public void run(String... args) throws Exception {
         rabbitTemplate.convertAndSend(RabbitConfiguration.EXCHANGE, RabbitConfiguration.ROUTING_KEY, parcelService.getAllParcels());

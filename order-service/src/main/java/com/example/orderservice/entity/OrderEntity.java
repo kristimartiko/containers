@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -19,11 +20,11 @@ public class OrderEntity implements Serializable {
 
     @Column private String currentLocation;
 
-    @Column private String startDate;
+    @Column private LocalDateTime startDate;
 
-    @Column private String arrivalDate;
+    @Column private LocalDateTime arrivalDate;
 
-    @Column private String orderDate;
+    @Column private LocalDateTime orderDate;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "containerId")

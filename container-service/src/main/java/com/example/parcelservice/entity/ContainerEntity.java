@@ -1,6 +1,9 @@
 package com.example.parcelservice.entity;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -8,11 +11,13 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
+@Builder
 @Table(name = "container")
 public class ContainerEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @NotNull
     @Column(name = "containerId")
     private Long containerId;
 

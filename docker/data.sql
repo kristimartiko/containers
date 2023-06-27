@@ -1,5 +1,5 @@
 create table employee(
-                         id numeric not null primary key ,
+                         containerId serial not null primary key ,
                          description varchar(255) not null,
                          weight numeric not null,
                          temperature numeric not null,

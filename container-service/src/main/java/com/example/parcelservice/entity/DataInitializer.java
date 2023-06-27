@@ -12,7 +12,6 @@ import java.util.stream.Stream;
 public class DataInitializer implements CommandLineRunner {
 
     final ContainerRepository parcelRepository;
-
     public DataInitializer(ContainerRepository parcelRepository) {
         this.parcelRepository = parcelRepository;
     }

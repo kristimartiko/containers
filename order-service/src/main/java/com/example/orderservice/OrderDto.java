@@ -2,13 +2,14 @@ package com.example.orderservice;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class OrderDto {
     String origin;
     String destination;
     String currentLocation;
-    String startDate;
-    String arrivalDate;
-    String orderDate;
-    long parcelId;
+    LocalDateTime startDate;
+    LocalDateTime arrivalDate;
+    LocalDateTime orderDate;
 }
