@@ -1,0 +1,28 @@
+version: '3'
+services:
+  database:
+    image: 'postgres:latest'
+    container_name: container_db
+    ports:
+      - 5432:5432
+    environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres123
+        - POSTGRES_DB=containers
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq
+
+#  container-backend:
+#    container_name: container-backend
+#    build:
+#      dockerfile: ./container-service/Dockerfile
+#    ports:
+#      - "8787:8787"
