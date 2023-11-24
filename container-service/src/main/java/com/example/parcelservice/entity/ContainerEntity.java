@@ -1,6 +1,5 @@
 package com.example.parcelservice.entity;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
@@ -18,8 +17,8 @@ public class ContainerEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
-    @Column(name = "containerId")
-    private Long containerId;
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "description")
     private String description;
@@ -43,7 +42,7 @@ public class ContainerEntity implements Serializable {
                            BigDecimal bigDecimal1, BigDecimal bigDecimal2,
                            BigDecimal bigDecimal3, BigDecimal bigDecimal4) {
 
-        this.containerId = l;
+        this.id = l;
         this.description = parcel1;
         this.weight = bigDecimal;
         this.temperature = bigDecimal1;
