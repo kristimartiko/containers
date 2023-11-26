@@ -28,6 +28,6 @@ public class ParcelController {
     public void addContainer(@RequestBody ContainerDto containerDto) throws Exception {
         this.containerService.addContainer(containerDto);
         String args = "";
-       // rabbitMqProducer.run(args);
+        rabbitMqProducer.run(args);
     }
 }

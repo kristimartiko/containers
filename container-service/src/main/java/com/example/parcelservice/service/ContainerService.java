@@ -18,7 +18,7 @@ public class ContainerService {
 
     public void addContainer(ContainerDto containerDto) {
         ContainerEntity container = ContainerEntity.builder()
-                .id(Long.parseLong(String.valueOf(Math.random())))
+                .id(containerDto.getId())
                 .description(containerDto.getDescription())
                 .weight(containerDto.getWeight())
                 .temperature(containerDto.getTemperature())
