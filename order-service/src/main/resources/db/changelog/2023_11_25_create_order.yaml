@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_order
+      author: KRISTI MARTIKO
+      changes:
+        - createTable:
+            tableName: order
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: origin
+                  type: varchar(225)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: destination
+                  type: varchar(225)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: current_location
+                  type: varchar(225)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: start_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: arrival_date
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: order_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: container_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_container_id
+                    references: container(id)

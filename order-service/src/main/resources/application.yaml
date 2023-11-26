@@ -1,0 +1,12 @@
+server:
+  port: 8789
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/order
+    username: postgres
+    password: postgres123
+
+  liquibase:
+    change-log: classpath:db/changelog.yaml
+    driver-class-name: org.postgresql.Driver

@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_container
+      author: KRISTI MARTIKO
+      changes:
+        - createTable:
+            tableName: container
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(225)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: weight
+                  type: decimal
+                  constraints:
+                    nullable: false
+              - column:
+                  name: temperature
+                  type: decimal
+                  constraints:
+                    nullable: false
+              - column:
+                  name: humidity
+                  type: decimal
+                  constraints:
+                    nullable: false
+              - column:
+                  name: air_pressure
+                  type: decimal
+                  constraints:
+                    nullable: false
+              - column:
+                  name: acceleration
+                  type: decimal
+                  constraints:
+                    nullable: false
