@@ -4,7 +4,7 @@ databaseChangeLog:
       author: KRISTI MARTIKO
       changes:
         - createTable:
-            tableName: order
+            tableName: container_order
             columns:
               - column:
                   name: id
@@ -50,3 +50,12 @@ databaseChangeLog:
                     nullable: false
                     foreignKeyName: fk_container_id
                     references: container(id)
+
+  - changeSet:
+      id: create_sequence
+      author: KRISTI MARTIKO
+      changes:
+        - createSequence:
+            sequenceName: container_order_seq
+            startValue: 1
+            incrementBy: 50

@@ -27,10 +27,12 @@ public class RabbitReciever {
     @RabbitListener(queues = RabbitConfiguration.QUEUE)
     public void listen(List<ContainerEntity> message) {
         for (ContainerEntity entity : message) {
-            logger.info("Message is: {}, {}, {}, {}, {}", entity.getContainerId().toString(), entity.getDescription(), entity.getAcceleration(), entity.getHumidity(), entity.getTemperature());
-            Optional<ContainerEntity> container = containerRepository.findById(entity.getContainerId());
-            if (container.isEmpty() || !orderService.checkIfExists(container.get(), entity)) {
-                containerRepository.save(entity);
+            if (entity != null) {
+                logger.info("Message is: {}, {}, {}, {}, {}", entity.getId().toString(), entity.getDescription(), entity.getAcceleration(), entity.getHumidity(), entity.getTemperature());
+                Optional<ContainerEntity> container = containerRepository.findById(entity.getId());
+                if (container.isEmpty() || !orderService.checkIfExists(container.get(), entity)) {
+                    containerRepository.save(entity);
+                }
             }
         }
     }

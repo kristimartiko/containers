@@ -8,6 +8,7 @@ import com.example.orderservice.repositories.ContainerRepository;
 import com.example.orderservice.repositories.OrderRepository;
 import lombok.Data;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.awt.*;
 import java.util.Optional;
@@ -18,6 +19,7 @@ public class OrderService {
     public final OrderRepository orderRepository;
     public final ContainerRepository containerRepository;
 
+    @Transactional
     public void addOrder(OrderDto orderDto, Long id) {
         OrderEntity orderEntity = new OrderEntity();
         orderEntity.setOrigin(orderDto.getOrigin());

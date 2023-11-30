@@ -17,14 +17,13 @@ public class ContainerService {
     }
 
     public void addContainer(ContainerDto containerDto) {
-        ContainerEntity container = ContainerEntity.builder()
-                .id(containerDto.getId())
-                .description(containerDto.getDescription())
-                .weight(containerDto.getWeight())
-                .temperature(containerDto.getTemperature())
-                .humidity(containerDto.getHumidity())
-                .airPressure(containerDto.getAirPressure())
-                .acceleration(containerDto.getAcceleration()).build();
+        ContainerEntity container = new ContainerEntity();
+        container.setAcceleration(containerDto.getAcceleration());
+        container.setDescription(containerDto.getDescription());
+        container.setWeight(containerDto.getWeight());
+        container.setTemperature(containerDto.getTemperature());
+        container.setAirPressure(containerDto.getAirPressure());
+        container.setHumidity(containerDto.getHumidity());
 
         this.parcelRepository.save(container);
     }

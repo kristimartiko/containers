@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "orders")
+@Table(name = "containerOrder")
 public class OrderEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,7 +26,7 @@ public class OrderEntity implements Serializable {
 
     @Column private LocalDateTime orderDate;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "containerId")
+    @ManyToOne()
+    @JoinColumn(name = "containerId", referencedColumnName = "id")
     private ContainerEntity containerEntity;
 }

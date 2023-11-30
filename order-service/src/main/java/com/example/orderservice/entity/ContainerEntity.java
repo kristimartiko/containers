@@ -17,8 +17,8 @@ import java.math.BigDecimal;
 public class ContainerEntity implements Serializable {
 
     @Id
-    @Column(name = "containerId")
-    private Long containerId;
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "description")
     private String description;
