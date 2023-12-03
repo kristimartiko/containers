@@ -9,6 +9,8 @@ services:
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=postgres123
         - POSTGRES_DB=containers
+    volumes:
+      - pg_data:/var/lib/postgresql/data
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
@@ -20,9 +22,5 @@ services:
       - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
       - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq
 
-#  container-backend:
-#    container_name: container-backend
-#    build:
-#      dockerfile: ./container-service/Dockerfile
-#    ports:
-#      - "8787:8787"
+volumes:
+  pg_data:
