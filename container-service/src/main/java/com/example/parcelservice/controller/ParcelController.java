@@ -30,4 +30,11 @@ public class ParcelController {
         String args = "";
         rabbitMqProducer.run(args);
     }
+
+    @PostMapping("/addContainer")
+    public void addContainers(@RequestBody ContainerDto containerDto) throws Exception {
+        this.containerService.addContainer(containerDto);
+        String args = "";
+        rabbitMqProducer.run(args);
+    }
 }
