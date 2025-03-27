@@ -3,14 +3,12 @@ package com.example.orderservice.service;
 import com.example.orderservice.entity.ContainerEntity;
 import com.example.orderservice.entity.OrderEntity;
 import com.example.orderservice.OrderDto;
-import com.example.orderservice.rabbit.RabbitReciever;
 import com.example.orderservice.repositories.ContainerRepository;
 import com.example.orderservice.repositories.OrderRepository;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.awt.*;
 import java.util.Optional;
 
 @Service
