@@ -25,7 +25,6 @@ public class ParcelController {
     @PostMapping("/addContainer")
     public void addContainer(@RequestBody ContainerDto containerDto) throws Exception {
         this.containerService.addContainer(containerDto);
-        String args = "";
     }
 
 }
